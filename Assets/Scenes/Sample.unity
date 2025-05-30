@@ -1576,7 +1576,7 @@ MonoBehaviour:
   microphoneDevice: 
   recordingLengthSeconds: 20
   samplingRate: 44100
-  openAiApiKey: 
+  openAiApiKey: sk-proj-QJA7U0XdcxEsnXR7jeWoT3BlbkFJHNA6IN969XZRg7B1c1QP
   avatarAnimator: {fileID: 1697436852}
   animationDuration: 1
 --- !u!1 &1818773882
