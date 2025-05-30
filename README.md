@@ -6,6 +6,12 @@
 - **Keyword-based sentiment** detection (`positive` / `negative` keyword lists).
 - **Audio playback**  with lip-sync after `Microphone.End`
 
+## Demo
+
+<video src="Demo_STG.mp4" controls loop muted width="640" height="360">
+  ⚠️ Your browser does not support HTML5 video.
+</video>
+
 ## Setup
 
 1. **Install**  
