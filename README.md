@@ -1,4 +1,4 @@
-# AIAvatarSpeechToGesture
+# AI Avatar Speech-To-Gesture
 
 ## Features
 - **Live recording** via `Microphone.Start` (triggered by the **R** from keyboard).
