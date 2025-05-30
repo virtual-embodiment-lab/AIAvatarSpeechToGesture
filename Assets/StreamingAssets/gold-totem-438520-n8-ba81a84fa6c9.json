@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gold-totem-438520-n8",
+  "private_key_id": "ba81a84fa6c98c5d54da62e3317f5a371d6fb6df",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC402zqStHszQCH\nLaKJ3et/6P6xPMUqBYQF2tLgCu0KTHgljbwe5WfU4vGsWg79WuKoP9ZbdNAyTpAG\n3dEPspIrMburMb4x3APYnyOnT7WU9yx6y8o62s13cxkU8GAEWOV2oMV52oDtNmk1\niiqTqj/9+9KyCbEEr/RsPmiSBXapGtaXMIV6hGj4nbvkg9U9p2rsAqu8Hr9ZW3rW\nmelZLGqDCoDg3xXovRSEr2dCfZg3mS3ow3TpU8zO2escSdKUMWZ6HnvNk2VnFWHR\nOXC/DehXWaBtGiUkIfGioAAWd7uKBU33c62q1uhC5KvSKahCkHN2qLJpg7Zr1Ss/\naq/Djr0XAgMBAAECggEABxGbAEj1R2u9we3GYiR5Lc6w8wFifw1v87NfTk9MqpCr\nJbCKidn3Qyac3J0jJqBzu8CZR60ri0kC7ChOpx2Kxpkj1tPTtN93zDCl8e+z/6sG\nafniVabppdBinLDm0zO9LvDOLK9lL+1dT71ljHk98k5PzBxfx1CddghbAn6v/56k\n0ByGN0GIDgUAggHadBygglVdxxUXmbfRd98Vu1XLekwDJiNTTnyaok1sgaILQP2O\nIEksQbePGvzhiBfNRWpftigpwxCfMRwCgyEerGFzs/QWrXEhyn7d0KP/akO5CaTn\nGUiBlvLB5KBR7ugwNLtpWM4qOiTk/izXazJIMJ0thQKBgQD+MV0yb9d/WZdYHY5d\n8FZ0wuH5Ge1btG5Z/Ceu6p7o2fLZRoQKCoi2p3sUihGUODp+TaO8bKBD/mvDkePT\ntcFPosmPq1eGCGiszbIn0WiVpxSVq2Yd6P46+VeaCGDEd4ZAIpPtf3V3vvfJBzev\nPZykbGaAq/scQAkVUWBgIjEUywKBgQC6I8/rpyvVftjIr2FF31w8LYhAMnib/aNr\nV0zWJNwrS+VO1TANrK2wp1KTDy4VJxGQAvbPu+PpyTsv+CitfyGwJE2Go82kq4Kd\ngjZ3MfYALG93K1RoF67J9sVavg2j2KSqb4vCEEeQi9679V6h2xC0aXJY7a11claE\n8jUQ4Rx7ZQKBgQCaARpv5mbvlz4kerO4olYfI7t5CoZOG0EIb8czKJ7igLmrfhed\nZchysYHWbdg8rtxxjWR4Um+/AjQUJx2bNPFL6FqqGqtKX2nb2Dvp9+ufT70e+NtD\nn9f3rv2uKwlFvwytasWpDKIEzMSfHSpVl8SBsdNgfdIDyaA3NDhpxg1qhQJ/Uil8\nnYgs0RAsoGjJhw4QqH9wpOWiVzid6cOfJuceR/44OZPgoiiWgmNZD5CjxrJ4DhlA\n2HEXKRqqBYKEchCrzhQ4JDYpj4YlIWFYqURkUa9LhE6b81aA0KUcd/FsE+aMyK50\nAjUtYaBbsJueKdOIjBn/X0GKT00o44YF5m13JQKBgQCjOYlXsdVP0G6HgrXHWqzp\ncB6WnrPosfolof7zPoZaZb4RsUqKemiLmgqX5/53AjBRgoe/e7SJfg5sEPE9BU/x\nO463s8m+fZnwAzPj+Y56GYZwz0Bp9ApID7arrYIj6Xj3jn1e+g5C14/GAHG5SBL7\nQxD1upQA/CAJFV0toUVwMQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "yejoon-research@gold-totem-438520-n8.iam.gserviceaccount.com",
+  "client_id": "115149686273856009734",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yejoon-research%40gold-totem-438520-n8.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

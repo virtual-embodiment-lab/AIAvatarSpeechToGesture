@@ -1,0 +1,22 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+
+# Keep .meta files for assets
+!/[Aa]ssets/**/*.meta
+
+# Rider, VS, MonoDevelop
+.idea/
+*.csproj
+*.sln
+*.user
+*.pidb
+
+# OS files
+.DS_Store
+Thumbs.db

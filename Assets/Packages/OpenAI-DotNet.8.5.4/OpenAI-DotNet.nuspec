@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>OpenAI-DotNet</id>
+    <version>8.5.4</version>
+    <title>OpenAI-DotNet</title>
+    <authors>Stephen Hodgson, Roger Pincombe</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Assets/OpenAI-DotNet-Icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/RageAgainstThePixel/OpenAI-DotNet</projectUrl>
+    <description>A simple C# .NET client library for OpenAI to use though their RESTful API.
+Independently developed, this is not an official library and I am not affiliated with OpenAI.
+An OpenAI API account is required.
+
+Forked from [OpenAI-API-dotnet](https://github.com/OkGoDoIt/OpenAI-API-dotnet).
+More context [on Roger Pincombe's blog](https://rogerpincombe.com/openai-dotnet-api).</description>
+    <releaseNotes>Version 8.5.4
+- Update ChatRequest to support o3 series reasoning models
+Version 8.5.3
+- Fix JsonStringEnumConverter for ChatRequests
+Version 8.5.1
+- Fix ChatRequest serialization for ReasoningEffort
+Version 8.5.0
+- Added Role.Developer for reasoning model messages
+- Added reasoning effort parameter for o1 series models in ChatRequest
+- Fix possible misinterpretation of function parameter types in function calls
+Version 8.4.2
+- Fix http/https protocol in client settings
+- Fix audio modality support in chat streaming completions
+Version 8.4.1
+- Fix ChatRequest serialization for Azure OpenAI
+Version 8.4.0
+- Add realtime support
+- Added o1, o1-mini, gpt-4o-mini, and gpt-4o-realtime, gpt-4o-audio model convenience properties
+- Fixed some bugs with function invocations
+- Fixed strict for built in FunctionAttribute defined tools
+- Fixed FunctionAttribute tool generated names so they aren't too long
+- Refactored Tools and ToolCalls. There is more of a distinction now in ChatResponses
+- Refactored SpeechRequest, and deprecated SpeechVoice enum in favor of new Voice class
+- Refactored OpenAI.Chat to support new audio modalities and output audio
+Version 8.3.0
+- Updated library to .net 8
+- Refactored TypeExtensions and JsonSchema generation
+  - Improved JsonSchema generation for enums and dictionaries
+  - Ensured JsonSchema properly handles nullable types
+- Ensure that function args are not re-serialized and passed back into tool function for future calls
+Version 8.2.5
+- Fixed ResponseObjectFormat deserialization when maxNumberOfResults is null
+Version 8.2.4
+- Fixed ResponseObjectFormat deserialization when set to auto
+- Added RankingOptions to FileSearchOptions
+- Fixed potential memory leaks when uploading files to various endpoints
+- Added timestamp values to BaseResponse to calculate rate limits
+Version 8.2.2
+- Added generic parameters to methods that support structured output
+Version 8.2.1
+- Fixed a typo in the Azure OpenAI URL base endpoint
+Version 8.2.0
+- Added structured output support
+- Added support for Azure OpenAI assistants
+- Fixed Azure OpenAI Id parsing for events
+- Fixed Assistant.CreateThreadAndRunAsync to properly copy assistant parameters
+- Removed stream parameter from CreateThreadAndRunRequest and CreateRunRequest
+  - They were overridden by the presence of an IStreamEventHandler anyway
+Version 8.1.2
+- Added constructor overloads to Tool and Function classes to support manually adding tool calls in the conversation history
+Version 8.1.1
+- Added overloads to Assistant streaming event callbacks to include event name: Func&lt;String, IServerSentEvent, Task&gt;
+Version 8.1.0
+- Fixed streaming event race conditions where the subscriber to the stream would finish before steam events were executed
+- Refactored streaming events callbacks from Action&lt;IServerSentEvent&gt; to Func&lt;IServerSentEvent, Task&gt;
+- Added Exception data to OpenAI.Error response
+- Added ChatEndpoint.StreamCompletionAsync with Func&lt;ChatResponse, Task&gt; overload
+Version 8.0.3
+- Fixed Thread.MessageResponse and Thread.RunStepResponse Delta stream event objects not being properly populated
+- Added Thread.MessageDelta.PrintContent()
+- Added additional unit tests for delta objects
+Version 8.0.2
+- Fixed Thread.Message.Attachement serialization
+- Fixed CreateAssistantRequest to properly copy all override assistant properties
+- Fixed some objects that are chunked, were not properly being appended to the final object
+- Added FileSearchOptions to Tool.FileSearch
+- Added some additional constructor overloads for CodeInterpreterResources
+- Added some additional constructor overloads for VectorStoreRequest
+- Thread.DeleteAsync and Assistant.DeleteAsync now fetch the latest before deleting when deleteToolResources is also requested
+- Refactored the way Function handles reflected invocations for both synchronous and asynchronous calls
+  - Function.InvokeAsync will now properly also call synchronous invocations in the tool call collection
+- Refactored Threads/Assistant Unit Tests
+Version 8.0.1
+- Fixed Thread.Run.Status enum ordering
+Version 8.0.0
+- Updated Assistants Beta v2
+- Added support for specifying project id
+- Added BatchEndpoint
+- Added VectorStoresEndpoint
+- Added Message.ctr to specify specific tool call id, function name, and content
+- Renamed OpenAI.Images.ResponseFormat to OpenAI.Images.ImageResponseFormat
+- Changed ThreadEndpoint.CancelRunAsync return type from RunResponse to bool
+- Fixed Json defined Tools/Functions being improperly added to tool cache
+- Added Tool.TryUnregisterTool to remove a tool from the cache
+Version 7.7.8
+- Updated OpenAIClientSettings.ctr to allow for domain http protocol override (i.e. http://localhost:8080 or http://0.0.0.0:8080)
+- Updated OpenAIClientSettings.BaseRequest public for easier access when implementing custom proxies.
+- Updated OpenAIClientSettings.IsAzureDeployment public for easier access when implementing custom proxies.
+Version 7.7.7
+- Updated static models list
+  - Added gpt-4-turbo
+  - Marked some models as deprecated since they are no longer available
+- Added temperature to CreateRunRequest and CreateThreadAndRunRequest
+- Fixed temperature to string conversion to be invariant culture for audio requests
+- Fixed type checking built in function tool calls
+- Fixed duplicate registration of function tool calls
+Version 7.7.6
+- Added support for Audio Transcription and Translation verbose json output
+  - Added support for timestamp granularities for segments and words
+  - Added AudioResponse
+  - Marked CreateTranscriptionAsync obsolete
+  - Added CreateTranscriptionTextAsync
+  - Added CreateTranscriptionJsonAsync
+  - Marked CreateTranspationAsync obsolete
+  - Added CreateTranslationTextAsync
+  - Added CreateTranslationJsonAsync
+- Updated SpeechResponseFormat to include wav and pcm
+Version 7.7.5
+- Allow FunctionPropertyAttribute to be assignable to fields
+- Updated Function schema generation
+  - Fall back to complex types, and use $ref for discovered types
+  - Fixed schema generation to properly assign unsigned integer types
+Version 7.7.4
+- Fixed Threads.RunResponse.WaitForStatusChangeAsync timeout
+Version 7.7.3
+- Updated ChatRequest toolChoice to only send type and name of function, reducing token usage
+Version 7.7.2
+- Added FunctionParameterAttribute to help better inform the feature how to format the Function json
+Version 7.7.1
+- More Function utilities and invoking methods
+  - Added FunctionPropertyAttribute to help better inform the feature how to format the Function json
+  - Added FromFunc&lt;,&gt; overloads for convenance
+  - Fixed invoke args sometimes being casting to wrong type
+  - Added additional protections for static and instanced function calls
+  - Added additional tool utilities:
+    - Tool.ClearRegisteredTools
+    - Tool.IsToolRegistered(Tool) - Tool.TryRegisterTool(Tool)
+  - Improved memory usage and performance by propertly disposing http content and response objects
+  - Updated debug output to be formatted to json for easier reading and debugging
+Version 7.7.0
+- Added Tool call and Function call Utilities and helper methods
+  - Added FunctionAttribute to decorate methods to be used in function calling
+  - Chat.Message.ToolCalls can be directly invoked using Function.Invoke() or Function.InvokeAsync(CancellationToken)
+  - Assistant tool call outputs can be easily generated using assistnat.GetToolOutputAsync(run.RequiredAction.SubmitToolOutputs.ToolCalls)
+  - Check updated docs for more details and examples
+- Fixed ChatRequest seed parameter not being set correctly
+Version 7.6.5
+- Updated api key prefix checks to only be enforced for OpenAI domain
+Version 7.6.4
+- Removed obsolete completions and edit endpoints
+Version 7.6.3
+- Added RetrieveFileStreamAsync method to Files.FilesEndpoint
+- Added new Embedding Models
+  - Added Model.Dimensions property
+- Added Threads.Run and Threads.RunStep Usage properties
+- Added CodeInterpreter Outputs to RunStepDetails.ToolCalls
+- Added Retrieval Outputs to RunStepDetails.ToolCalls
+Version 7.6.2
+- Fixed parameter name in Threads.CreateMessageRequest
+- Added Stream overload to Threads.FileUploadRequest
+Version 7.6.1
+- Include Output in Threads.FunctionCall
+Version 7.6.0
+- Changed License to MIT
+- Added OpenAI.Chat logprob parameters
+- Added SourceLink references for debugging
+- Added Docfx build workflow
+Version 7.5.0
+- Changed OpenAIClient to implement IDisposable.
+  - Disposing OpenAICLient is now required if you're not passing a custom HttpClient.
+  - If passing an custom HttpClient, it will need to be expressly disposed after use.
+- Updated Chat.Message.CopyFrom Content check from string.IsNullOrEmpty to null check.
+Version 7.4.4
+- Updated Docs
+Version 7.4.3
+- Updated FileResponse.Size int -&gt; int?
+Version 7.4.2
+- Fixed missing Threads.Message.Content.ImageFile property.
+- Marked OpenAI.Completions Obsolete
+Version 7.4.1
+- Fixed AssistantExtension.UploadFileAsync spelling error with file purpose.
+Version 7.4.0
+- Refactored OpenAI.Threads.LastRunError -&gt; OpenAI.Error for more generic use in future.
+- Fixed OpenAI.Threads.Annotations namespace
+- Fixed OpenAI.Threads.ContextText namespace
+Version 7.3.8
+- Added Chat.Content.ctr overloads and implicit casting for easier usage
+- Internal refactoring of FilesEndpoint.DeleteFileAsync (better status checking)
+- Internal refactoring of FineTuningEndpoint to ensure we're properly setting response data
+- Updated unit tests
+- Updated docs
+Version 7.3.7
+- Fixes streaming with tools not being property copied over
+Version 7.3.6
+- Fixed ArgumentOutOfRangeException when streaming chat completion response contains more than one tool
+Version 7.3.5
+- Added GetModerationChunkedAsync method in ModerationsEndpoint
+- Fixed streaming function tool serialization
+Version 7.3.4
+- Fixed AudioTranslationRequest.Temperature type. int? -&gt; float?
+Version 7.3.3
+- Fixed Threads.FileCitation json property name
+Version 7.3.2
+- Added detail parameter to ImageURL
+Version 7.3.1
+- Fixed json serialization settings when EnableDebug is disabled
+Version 7.3.0
+- Added AgentsEndpoint
+- Added ThreadsEndpoint
+- Updated ImagesEndpoint return types to ImageResult list
+- Updated FilesEndpoint.ListFilesAsync with optional purpose filter query parameter.
+- Refactored list responses with a more generic ListQuery and ListResponse&lt;TObject&gt; pattern
+  - EventList -&gt; ListResponse&lt;EventResponse&gt;
+  - FineTuneJobList -&gt; ListResponse&lt;FineTuneJobResponse&gt;
+- Standardized names for timestamps to have suffix: UnixTimeSeconds
+- Standardized response class names (existing classes depreciated)
+  - FileData -&gt; FileResponse
+  - CompletionResult -&gt; CompletonResponse
+  - Event -&gt; EventResponse
+  - FineTuneJob -&gt; FineTuneJobResponse
+Version 7.2.3
+- Added support for reading RateLimit information from the Headers
+Version 7.2.2
+- Fixed Image Generation for Azure
+Version 7.2.1
+- Fixed a NRE with chat Message.ToString call when dynamic content is json element
+- Removed improper set accessors for Function.Arguments and Function.Parameters properties
+- Removed improper ChatResponse constructor
+- Fixed unit test names
+- Updated docs
+Version 7.2.0
+- Updated chat endpoint features
+  - json mode
+  - gpt-vision
+  - reproducible outputs
+  - tool functions
+Version 7.1.0
+- Convert Fine Tuning endpoint to latest (Breaking Change!)
+- Added Text to Speech endpoint
+- Updated Image endpoints with model parameters and support for Dall E 3
+- Removed Model type checks, and now lets api handle errors
+Version 7.0.10
+- Fixed processing time string culture conversion when parsing double
+Version 7.0.9
+- Fixed Model delete permission Unauthorized Access check
+Version 7.0.8
+- Fixed AudioTranscriptionRequest.Temperature type. int? -&gt; float?
+- Updated Moderations Categories and Scores with new metrics
+Version 7.0.5
+- Fixed Message.Content serialization in Role.Function message history
+Version 7.0.4
+- Fixed ChatRequest forced function calls
+Version 7.0.3
+- Fixed chat streaming message copy from delta
+Version 7.0.2
+- Only set response header properties if they exist
+- Remove OpenAIClient.ctr overload
+Version 7.0.1
+- Fixed streaming chat functions
+Version 7.0.0
+- Added function calling to chat models
+Version 6.8.7
+- Added ToString and string operator to Moderation Scores
+Version 6.8.6
+- Populated finish reason in streaming chat final message content
+Version 6.8.5
+- Updated all method calls to take a Model as string
+Version 6.8.3
+- Revert BaseEndpoint.GetUrl changes
+Version 6.8.2
+- Misc internal fixes, formatting, and docs
+Version 6.8.1
+- Updated basic and chat completions choices to default to empty string.
+- Fixed Completions.CompletionResult.ToString first completion index lookup
+- Update the HttpClient creation to set the PooledConnectionLifetime property per Microsofts recommendation.
+Version 6.8.0
+- Removed Obsolete ChatPrompt
+- ChatEndpoint.StreamCompletionAsync will now also raise additional ChatResponse with completed Message
+- ChatEndpoint.StreamCompletionEnumerableAsync will now also raise additional ChatResponse with completed Message
+- Refactored all streaming endpoints to use a new string extension for centralized parsing of event stream data
+- Added optional paramter cancelJob to FineTuningEndpoint.StreamFineTuneEventsEnumerableAsync. Default is false.
+- Added optional parameter cancelJob to FineTuningEndpoint.StreamFineTuneEventsAsync. Default is false.
+- Added optional parameter deleteCachedFile to FileEndpoint.DownloadFileAsync. Defaults to false.
+- Updated Completions.LogProbabilities.TopLogProbabilities to properly use immutable IReadOnlyList&lt;IReadOnlyDictionary&lt;string, double&gt;&gt;
+Version 6.7.4
+- Fixed Model.Permissions
+- Added Model.CreatedAt
+Version 6.7.3
+- added missing IDisposable to audio requests
+Version 6.7.2
+- Made it easier to specify a specific configuration file path
+- Added optional author name property to chat message
+- Added implicit string conversions to make ChatResponses easier to work with
+- Updated Docs
+Version 6.7.1
+- Fixed parsing old env file format
+- Fixed parsing missing ORGANIZATION env variables
+- Fixed checking of CancellationToken.IsCancellationRequested in streaming endpoints
+- Updated Docs
+Version 6.7.0
+- Deprecated ChatPrompt -&gt; Message
+- Added Role enum for Chat.Messages and Chat.Delta
+- Updated ChatRequest constructor to use IEnumerable&lt;Message&gt; messages
+- Updated ChatRequest.Messages to IReadonlyList&lt;Message&gt;
+- Updated unit tests
+Version 6.6.0
+- Added ResponseFormat to ImageGenerationRequests
+- Refactored Image Requests with AbstractBaseImageRequest
+Version 6.5.3
+- Added missing ConfigureAwait to await calls
+Version 6.5.2
+- Updated SetResponseData to better reflect the difference between OpenAI and Azure responses.
+- Updated ProcessingTime parsing from int to double
+Version 6.5.1
+- Removed Obsolete from EditEndpoint as it has now been fixed by OpenAI
+Version 6.5.0
+- Marked EditEndpoint Obsolete as codex and edit models have been removed
+Version 6.4.3
+- Fixed support for Azure Active Directory authentication for Azure OpenAI
+Version 6.4.2
+- Misc fixes and added validation for OpenAICLientSettings
+- Updated docs
+- Decoupled proxy version from main package
+Version 6.4.1
+- Added ImageEditRequest overloads for optional mask parameter
+Version 6.4.0
+- Moved OpenAI-DotNet-Proxy back into its own project and package
+- Make a few classes sealed that are not meant to be extended
+Version 6.3.2
+- Attempt to fix dependency requirement for dotnet/runtime docker base images
+- Made internal OpenAIClient constructor with HttpClient public
+- Make sure we only copy the appropriate headers in the proxy
+Version 6.3.1
+- Fixed apikey requiring sk- prefix with Azure OpenAI
+Version 6.3.0
+- Removed OpenAI-DotNet-Proxy and put it directly in package on its own
+Version 6.2.0
+- Added OpenAI-DotNet-Proxy project and package.
+- Added support for custom domains
+- Updated unit tests
+- Updated docs
+Version 6.1.0
+- Added support for gpt-4 models
+Version 6.0.1
+- Updated package info
+- Updated docs
+Version 6.0.0
+- Added support for Azure OpenAI
+Version 5.1.2
+- Fixed an issue when deleting personal account fine tuned models
+Version 5.1.1
+- Refactored Model validation
+- Added additional default models
+- Deprecate OpenAIClient.DefaultModel
+- Implemented chat completion streaming
+- Refactored immutable types
+Version 5.1.0
+- Add support for Audio endpoint and Whisper models
+  - Audio Speech to text
+  - Audio translation
+Version 5.0.2
+- Support multiple inputs in embedding
+- Added better model validation in all endpoints
+Version 5.0.1
+- Fixed chat parameters
+Version 5.0.0
+- Added Chat endpoint
+Version 4.4.4
+- ImageEditRequest mask is now optional so long as texture has alpha transparency
+- ImageVariationRequest added constructor overload for memory stream image
+- Updated AuthInfo parameter validation
+- Renamed OPEN_AI_ORGANIZATION_ID -&gt; OPENAI_ORGANIZATION_ID
+Version 4.4.3
+- added OPEN_AI_ORGANIZATION_ID environment variable
+- deprecated Organization use OrganizationId instead
+Version 4.4.2
+- Removed a useless assert
+- Updated docs
+Version 4.4.1
+- hotfix to CompletionsEndpoint to use IEnumerable&lt;string&gt;
+- hotfix to cleanup Images endpoints
+Version 4.4.0
+- Renamed Choice.Logprobs -&gt; Choice.LogProbabilities
+- Renamed OpenAI.Completions.Logprobs -&gt; OpenAI.Completions.OpenAI.Completions
+- Renamed CompletionRequest parameter names:
+  - max_tokens -&gt; maxTokens
+  - top_p -&gt; topP
+- Updated CompletionRequest to accept IEnumerable&lt;string&gt; values for prompts and stopSequences
+- Refactored all endpoints to use new response validation extension
+- Added CancellationToken to most endpoints that had long running operations</releaseNotes>
+    <copyright>2024</copyright>
+    <tags>OpenAI, AI, ML, API, o1, o3, gpt-4o, gpt-4-turbo, dall-e-3</tags>
+    <repository type="git" url="https://github.com/RageAgainstThePixel/OpenAI-DotNet" commit="94f671d616b17ecfdf18714d5f55f4916a7d95c7" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+</package>

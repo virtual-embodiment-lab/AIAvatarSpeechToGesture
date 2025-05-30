@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Anthropic.SDK</id>
+    <version>4.0.0</version>
+    <title>Claude API</title>
+    <authors>Grant Hamm</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/tghamm/Anthropic.SDK</projectUrl>
+    <description>A C# / .NET library to use with Anthropic's Claude API.  Supports Streaming and Tools</description>
+    <releaseNotes>Better Support for Threaded Calls, Refactored Tool Calls, Rate Limit Information, Tool Choice Configuration</releaseNotes>
+    <copyright>This library is licensed MIT, in the public domain</copyright>
+    <tags>Claude, AI, ML, API, Anthropic</tags>
+    <repository type="git" url="https://github.com/tghamm/Anthropic.SDK" commit="07997f2ae542bb219a0db32e8b484afc146df748" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net8.0" />
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="6.0.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
