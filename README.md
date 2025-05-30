@@ -8,9 +8,12 @@
 
 ## Demo
 
-<video src="Demo_STG.mov" controls loop muted width="640" height="360">
-  ⚠️ Your browser does not support HTML5 video.
-</video>
+<iframe width="640" height="360"
+  src="https://youtu.be/U3K-vTA4xHM"
+  frameborder="0"
+  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 ## Setup
 
