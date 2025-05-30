@@ -14,6 +14,8 @@
 
 1. **Add to Unity**  
    - Attach `AvatarSpeechToGesture.cs` to a GameObject with an **Animator** (parameters: `Agree`, `Disagree`; defalt: `Idle`).
+   - Add Audio Source to the GameObject(avatar)
+   - Add SALSA, Amplitude, AmplitudeSALSA, and Queue Processor to the GameOject(avatar)
 
 3. **Inspector**  
    - **API Key**: your OpenAI key  
