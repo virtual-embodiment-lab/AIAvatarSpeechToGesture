@@ -8,12 +8,7 @@
 
 ## Demo
 
-<iframe width="640" height="360"
-  src="https://youtu.be/U3K-vTA4xHM"
-  frameborder="0"
-  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+[![Demo Video](Demo.png)](https://youtu.be/U3K-vTA4xHM)
 
 ## Setup
 
