@@ -8,7 +8,7 @@
 
 ## Demo
 
-<a href="https://youtu.be/U3K-vTA4xHM" target="_blank">
+<a href="https://youtu.be/U3K-vTA4xHM" target="_blank" rel="noopener noreferrer">
   <img src="Demo.png" 
        alt="Demo Video" 
        width="640" />
