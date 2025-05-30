@@ -8,7 +8,7 @@
 
 ## Demo
 
-<video src="Demo_STG.mp4" controls loop muted width="640" height="360">
+<video src="Demo_STG.mov" controls loop muted width="640" height="360">
   ⚠️ Your browser does not support HTML5 video.
 </video>
 
