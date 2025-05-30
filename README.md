@@ -6,14 +6,6 @@
 - **Keyword-based sentiment** detection (`positive` / `negative` keyword lists).
 - **Audio playback**  with lip-sync after `Microphone.End`
 
-## Demo
-
-<a href="https://youtu.be/U3K-vTA4xHM" target="_blank" rel="noopener noreferrer">
-  <img src="Demo.png" 
-       alt="Demo Video" 
-       width="640" />
-</a>
-
 ## Setup
 
 1. **Install**  
