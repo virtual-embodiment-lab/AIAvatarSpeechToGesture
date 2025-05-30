@@ -184,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ab6c95cdb7a140748101dab5a2ae957, type: 2}
+  - {fileID: 2100000, guid: 8fc5f2eedf57b41dab74e5dc407fe81e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,7 +224,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
   m_LocalPosition: {x: -0.00000034715, y: 1.7, z: 3.77}
-  m_LocalScale: {x: 1.2189, y: 1, z: 0.4138632}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   microphoneDevice: 
   recordingLengthSeconds: 20
   samplingRate: 44100
-  openAiApiKey: sk-proj-QJA7U0XdcxEsnXR7jeWoT3BlbkFJHNA6IN969XZRg7B1c1QP
+  openAiApiKey: 
   avatarAnimator: {fileID: 1697436852}
   animationDuration: 1
 --- !u!1 &1818773882
