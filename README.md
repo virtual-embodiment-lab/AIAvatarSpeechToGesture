@@ -13,7 +13,7 @@
    - SALSA LipSync Suite
 
 1. **Add to Unity**  
-   - Attach `AvatarSpeechToGesture.cs` to a GameObject with an **Animator** (parameters: `Agree`, `Disagree`; defalt: `Idle`).
+   - Attach `AvatarSpeechToGesture.cs` to a GameObject with an **Animator** (parameters: `Agree`, `Disagree`; default: `Idle`).
    - Add Audio Source to the GameObject(avatar)
    - Add SALSA, Amplitude, AmplitudeSALSA, and Queue Processor to the GameOject(avatar)
 
