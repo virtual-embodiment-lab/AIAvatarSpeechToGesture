@@ -8,7 +8,11 @@
 
 ## Demo
 
-[![Demo Video](Demo.png)](https://youtu.be/U3K-vTA4xHM)
+<a href="https://youtu.be/U3K-vTA4xHM" target="_blank">
+  <img src="Demo.png" 
+       alt="Demo Video" 
+       width="640" />
+</a>
 
 ## Setup
 
