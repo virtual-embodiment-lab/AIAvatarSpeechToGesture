@@ -14,12 +14,12 @@
 
 1. **Add to Unity**  
    - Attach `AvatarSpeechToGesture.cs` to a GameObject with an **Animator** (parameters: `Agree`, `Disagree`; default: `Idle`).
-   - Add Audio Source to the GameObject(avatar)
-   - Add SALSA, Amplitude, AmplitudeSALSA, and Queue Processor to the GameOject(avatar)
+   - Add Audio Source to the GameObject (avatar)
+   - Add SALSA, Amplitude, AmplitudeSALSA, and Queue Processor to the GameOject (avatar) for lip-sync
 
 3. **Inspector**  
-   - **API Key**: your OpenAI key  
-   - **Mic Device**: defaults to first
+   - **API Key**: Enter your OpenAI key  
+   - **Mic Device**: Defaults to the first available microphone
 
 ## Tips
 
