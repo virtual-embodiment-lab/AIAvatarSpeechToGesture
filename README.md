@@ -23,6 +23,6 @@
 
 ## Tips
 
-- **Gesture Animation** Check your Animator has the right bool names and transitions. You can change or add more animations. 
-- **Customize** You can change the keyword lists in the script.
+- **Gesture Animation** Check your Animator has the right bool names and transitions. You can modify or add additional animations as needed. 
+- **Customize Keywords/Context** You can change the keyword lists in the script.
 
